@@ -19,7 +19,12 @@ public class CalculadoraService {
 		
 	}
 	public CalculadoraResposta Dividir(CalculadoraRequisicao requisicao) {
-		double resultado = requisicao.n1 / requisicao.n2;
+		double resultado;
+		if (requisicao.n2 == 0){
+			resultado = 0;
+		} else{
+			resultado = requisicao.n1 / requisicao.n2;
+		}
 		return new CalculadoraResposta(requisicao.n1 , requisicao.n2, resultado);
 		
 	}
